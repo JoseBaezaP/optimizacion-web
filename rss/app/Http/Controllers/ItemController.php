@@ -9,7 +9,7 @@ use Orchestra\Parser\Xml\Facade as XmlParser;
 class ItemController extends Controller
 {
     public function __invoke() {
-        $carga_xml = simplexml_load_file("https://www.elperiodico.com/es/rss/tiempo/rss.xml");
+        $carga_xml = simplexml_load_file("http://feeds.bbci.co.uk/news/world/rss.xml");
         foreach($carga_xml->channel->item as $items) {
             $news = Item::create([
                 'title'=>$items->title,
