@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\NewsController;
 
@@ -16,4 +17,5 @@ use App\Http\Controllers\NewsController;
 */
 
 Route::get('/', ItemController::Class);
-Route::get('/news', NewsController::Class);
+Route::resource('news.', NewsController::Class)->only(['index']);
+Route::post('/search', [NewsController::Class,'search']);
