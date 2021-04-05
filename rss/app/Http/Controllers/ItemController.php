@@ -18,8 +18,7 @@ class ItemController extends Controller
                 'link'=>$items->link
             ]);
             $news->save();
-        }
-        echo "Info guardada";
-        die();
+        } 
+        return redirect('/new');
     }
 }

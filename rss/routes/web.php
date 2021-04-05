@@ -16,4 +16,5 @@ use App\Http\Controllers\NewsController;
 */
 
 Route::get('/', ItemController::Class);
-Route::get('/news', NewsController::Class);
+Route::get('/new', NewsController::Class);
+Route::post('/search', [NewsController::Class,'search']);
