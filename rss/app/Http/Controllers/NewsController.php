@@ -26,6 +26,6 @@ class NewsController extends Controller
     public function search(Request $request) {
         $type = "search";
 
-        return redirect('/new')->cookie('value',$request->get('search'),2);
+        return redirect('/news')->cookie('value',$request->get('search'),2);
     }
 }

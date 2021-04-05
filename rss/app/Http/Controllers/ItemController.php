@@ -22,6 +22,6 @@ class ItemController extends Controller
             ]);
             $news->save();
         } 
-        return redirect('/new');
+        return redirect('/news');
     }
 }
