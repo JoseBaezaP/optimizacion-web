@@ -19,6 +19,7 @@ class NewsController extends Controller
         else {
             $news = Item::orderBy('date','desc')->paginate(5);     
         }
+
         return view("news",compact("news"));
 
     }
@@ -26,6 +27,6 @@ class NewsController extends Controller
     public function search(Request $request) {
         $type = "search";
 
-        return redirect('/news')->cookie('value',$request->get('search'),2);
+        return redirect('/news')->cookie('value',$request->get('search'),.02);
     }
 }
