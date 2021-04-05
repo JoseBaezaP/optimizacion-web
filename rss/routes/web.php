@@ -18,4 +18,5 @@ use App\Http\Controllers\NewsController;
 
 Route::get('/', ItemController::Class);
 Route::get('/news', NewsController::Class);
+Route::get('/news/{identificador}',[ NewsController::Class,'order'])->name('news.ordenar');
 Route::post('/search', [NewsController::Class,'search']);

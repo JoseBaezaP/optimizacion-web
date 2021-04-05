@@ -29,4 +29,23 @@ class NewsController extends Controller
 
         return redirect('/news')->cookie('value',$request->get('search'),.02);
     }
+
+    public function order($identificador){
+
+        $news = '';
+        if($identificador == 'titulo'){
+            $news = Item::orderBy('title','asc')->paginate(5);
+
+        }else if($identificador == 'descripcion'){
+            $news = Item::orderBy('description','asc')->paginate(5);
+
+        }else if($identificador == 'fecha'){
+            $news = Item::orderBy('date','desc')->paginate(5);
+
+        }
+
+
+        return view("news",compact("news"));
+     
+    }
 }

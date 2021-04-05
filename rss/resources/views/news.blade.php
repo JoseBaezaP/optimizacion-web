@@ -13,6 +13,8 @@
           </div>
         </form>
       </div>
+
+
       <div class="col-3 offset-5">
         @if(count($news)>0)
           {{ $news->links() }}
@@ -20,6 +22,15 @@
         @endif
       </div>
     </div>
+
+    <div>
+<h5>Ordenar por:</h5>
+
+<a href="{{route('news.ordenar','titulo')}}">Titulo</a>
+<a href="{{route('news.ordenar','descripcion')}}">Descripcion</a>
+<a href="{{route('news.ordenar','fecha')}}">Fecha</a>
+
+</div><br>
     @foreach($news as $new)
 
     <div class="card  mb-2">
