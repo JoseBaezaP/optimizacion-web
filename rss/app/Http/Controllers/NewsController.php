@@ -32,7 +32,6 @@ class NewsController extends Controller
 
     public function order($identificador){
 
-        $news = '';
         if($identificador == 'titulo'){
             $news = Item::orderBy('title','asc')->paginate(5);
 
@@ -43,8 +42,6 @@ class NewsController extends Controller
             $news = Item::orderBy('date','desc')->paginate(5);
 
         }
-
-
         return view("news",compact("news"));
      
     }

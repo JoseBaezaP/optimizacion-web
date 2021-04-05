@@ -5,16 +5,8 @@
     <div class="container">
     <div class="row">
       <div class="col-4 ">
-        <form action="/search" method="POST">
-          @csrf
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Buscar" name="search">
-            <button class="btn btn-outline-secondary" type="submit">Button</button>
-          </div>
-        </form>
+        @include('partials.inputSearch')
       </div>
-
-
       <div class="col-3 offset-5">
         @if(count($news)>0)
           {{ $news->links() }}
@@ -24,13 +16,7 @@
     </div>
 
     <div>
-<h5>Ordenar por:</h5>
-
-<a href="{{route('news.ordenar','titulo')}}">Titulo</a>
-<a href="{{route('news.ordenar','descripcion')}}">Descripcion</a>
-<a href="{{route('news.ordenar','fecha')}}">Fecha</a>
-
-</div><br>
+    @include('partials.dropdown')
     @foreach($news as $new)
 
     <div class="card  mb-2">
