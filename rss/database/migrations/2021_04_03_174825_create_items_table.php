@@ -18,7 +18,7 @@ class CreateItemsTable extends Migration
             $table->string('title');
             $table->string('link');
             $table->text('description');
-            $table->string('author');
+            $table->date('date');
             $table->timestamps();
         });
     }
