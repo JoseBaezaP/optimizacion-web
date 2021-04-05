@@ -1,17 +1,11 @@
 @extends('layout.app')
 @section('content')
-    <h1>Rss</h1>
-
+    
     <div class="container">
+    <h1 class="m-2"><a href="/news" class="text-decoration-none">Rss</a> </h1>
     <div class="row">
       <div class="col-4 ">
-        <form action="/search" method="POST">
-          @csrf
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Buscar" name="search">
-            <button class="btn btn-outline-secondary" type="submit">Button</button>
-          </div>
-        </form>
+        @include('partials.inputSearch')
       </div>
       <div class="col-3 offset-5">
         @if(count($news)>0)
@@ -20,6 +14,10 @@
         @endif
       </div>
     </div>
+   
+
+    <div>
+    @include('partials.dropdown')
     @foreach($news as $new)
 
     <div class="card  mb-2">
