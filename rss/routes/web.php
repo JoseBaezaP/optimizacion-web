@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\NewsController;
-
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,5 +17,6 @@ use App\Http\Controllers\NewsController;
 
 Route::get('/', ItemController::Class);
 Route::get('/news', NewsController::Class);
-Route::get('/news/{identificador}',[ NewsController::Class,'order'])->name('news.ordenar');
-Route::post('/search', [NewsController::Class,'search']);
+Route::get('/news/{identificador}',[ NewsController::Class,'order'])->name('news');
+Route::post('/search',[SearchController::Class,'store']);
+Route::resource('news.search',SearchController::Class)->only(['index','store','show']);

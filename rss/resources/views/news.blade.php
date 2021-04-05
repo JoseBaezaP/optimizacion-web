@@ -1,8 +1,8 @@
 @extends('layout.app')
 @section('content')
-    <h1>Rss</h1>
-
+    
     <div class="container">
+    <h1 class="m-2"><a href="/news" class="text-decoration-none">Rss</a> </h1>
     <div class="row">
       <div class="col-4 ">
         @include('partials.inputSearch')
@@ -14,6 +14,7 @@
         @endif
       </div>
     </div>
+   
 
     <div>
     @include('partials.dropdown')
