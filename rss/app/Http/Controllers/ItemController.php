@@ -9,8 +9,8 @@ use Carbon\Carbon;
 
 class ItemController extends Controller
 {
-    public function __invoke() {
-        $carga_xml = simplexml_load_file("http://feeds.bbci.co.uk/news/world/rss.xml");
+    public function formulario(Request $req){
+        $carga_xml = simplexml_load_file($req->urlfeed);
         
         foreach($carga_xml->channel->item as $items) {
             $carbon_date = new Carbon($items->pubDate);
@@ -24,4 +24,6 @@ class ItemController extends Controller
         } 
         return redirect('/news');
     }
+
+    
 }
