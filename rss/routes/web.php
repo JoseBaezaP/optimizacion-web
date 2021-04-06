@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\UrlFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',UrlFormController::Class);
+Route::get('/news', NewsController::Class);
+Route::get('/news/{identificador}',[ NewsController::Class,'order'])->name('news');
+Route::post('/search',[SearchController::Class,'store']);
+Route::resource('news.search',SearchController::Class)->only(['index','store','show']);
+Route::post('/post-feed',[ItemController::class,'formulario'])->name('postfeed');
