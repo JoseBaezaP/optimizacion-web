@@ -10827,6 +10827,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.pagination {
+  float: right;
+}
+
 body {
   margin: 0;
   position: relative;
