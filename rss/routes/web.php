@@ -15,8 +15,10 @@ use App\Http\Controllers\SearchController;
 |
 */
 
-Route::get('/', ItemController::Class);
+//Route::get('/', ItemController::Class);
 Route::get('/news', NewsController::Class);
 Route::get('/news/{identificador}',[ NewsController::Class,'order'])->name('news');
 Route::post('/search',[SearchController::Class,'store']);
 Route::resource('news.search',SearchController::Class)->only(['index','store','show']);
+Route::view('formulario','newFeedForm');
+Route::post('/post-feed',[ItemController::class,'formulario'])->name('postfeed');
