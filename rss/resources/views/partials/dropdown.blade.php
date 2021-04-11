@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-6">
+  <div class="col-4">
     <div class="btn-group dropend mb-3">
       <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
       Ordenar por:
@@ -11,7 +11,10 @@
       </ul>
     </div>
   </div>
-  <div class="col-6 text-end">
-    <a href="/"><button type="button" class="btn btn-outline-primary">Agregar más noticias</button></a>       
+  <div class="col-8">
+  @if(count($news)>0)
+              {{ $news->links() }}
+            
+            @endif     
   </div>
 </div>
