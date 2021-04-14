@@ -18,8 +18,10 @@ use App\Http\Controllers\UrlFormController;
 */
 
 Route::get('/',UrlFormController::Class);
+Route::get('/post-feed',ItemController::class);
 Route::get('/news', NewsController::Class);
 Route::get('/news/{identificador}',[ NewsController::Class,'order'])->name('news');
 Route::post('/search',[SearchController::Class,'store']);
 Route::resource('news.search',SearchController::Class)->only(['index','store','show']);
 Route::post('/post-feed',[ItemController::class,'formulario'])->name('postfeed');
+Route::post('/refresh',[ NewsController::Class,'refresh']);

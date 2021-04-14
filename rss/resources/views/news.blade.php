@@ -1,12 +1,16 @@
 @extends('layout.app')
 @section('content') 
     <div class="container">
+    @include('partials.notification')
       <div class="row">
         <div class="col-6">
           <h1 class="m-2"><a href="/news" class="text-decoration-none">Rss</a> </h1>
         </div>
         <div class="col-6 d-flex align-refresh">
-          <a href="/news" class="m-2 text-decoration-none">Actualizar</a>
+          <form action="/refresh" method="post">
+            @csrf       
+            <button type="submit" class="m-2 btn link-primary">Actualizar</button>
+          </form>
         </div>
       </div>
         <div class="row">
@@ -14,7 +18,7 @@
             @include('partials.inputSearch')
           </div>
           <div class="col-8 text-end">
-            <a href="/"><button type="button" class="btn btn-outline-primary">Agregar más noticias</button></a>  
+            <a href="/post-feed"><button type="button" class="btn btn-outline-primary">Agregar más noticias</button></a>  
           </div>
         </div>
         @include('partials.dropdown')

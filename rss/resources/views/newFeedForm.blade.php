@@ -3,7 +3,7 @@
 <div class="container">
 <div class="card text-center mx-auto my-5 w-50">
     @include('partials.notification')
-   <div class="card-title"><h1>Ingresa tu feed de noticias</h1></div>
+   <div class="card-title"><h1>Ingresa tu url de noticias</h1></div>
   <div class="card-body">
   <form method="POST" action="{{route('postfeed')}}"> 
     @csrf

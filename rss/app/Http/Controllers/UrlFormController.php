@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class UrlFormController extends Controller
 {
     public function __invoke() {
-        return view('newFeedForm');
+        return redirect('/news');
     }
 }
