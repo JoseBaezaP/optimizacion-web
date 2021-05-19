@@ -2,9 +2,13 @@
 @section('content') 
     <div class="container">
     @include('partials.notification')
+    <div class="row">
+    <div class="col-2">
+    </div>
+     <div class="col-8">
       <div class="row">
         <div class="col-6">
-          <h1 class="m-2"><a href="/news" class="text-decoration-none">Rss</a> </h1>
+          <h1 class="m-2"> <image src="\logo.jpeg" class="navbar-brand"> <a href="/news" class="text-decoration-none">Rss</a> </h1> 
         </div>
         <div class="col-6 d-flex align-refresh">
           <form action="/refresh" method="post">
@@ -45,5 +49,9 @@
       @else
         <div class="p-3 mb-2 bg-light text-dark">No se encontraron noticias.</div>
       @endif
+      </div>
+      </div>
+      <div class="col-2" style="background-image: url('\vertical.jpg'); background-repeat: repeat-y;">
+    </div>
     </div>
 @endsection
