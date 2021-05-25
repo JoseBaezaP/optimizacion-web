@@ -1,7 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
+@import 'addNews';
 @import 'nav';
 @import 'pagination';
 body {
-    margin: 0;
-    position: relative;
+  margin: 0;
+  position: relative;
+  background-image: url('/images/fondo.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
