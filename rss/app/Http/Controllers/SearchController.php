@@ -10,8 +10,8 @@ class SearchController extends Controller
 {
     public function index($variable) {
         $news = Item::orderBy('date','desc')
-        ->where('title','LIKE','%'.$variable.'%')
-        ->orWhere('description','LIKE','%'.$variable.'%')
+        ->where('title','ILIKE','%'.$variable.'%')
+        ->orWhere('description','ILIKE','%'.$variable.'%')
         ->paginate(5);
         return view("news",compact("news","variable"));
     }
@@ -24,8 +24,8 @@ class SearchController extends Controller
             $order = 'asc';
         }
         $news = Item::orderBy($type, $order)
-        ->where('title','LIKE','%'.$variable.'%')
-        ->orWhere('description','LIKE','%'.$variable.'%')
+        ->where('title','ILIKE','%'.$variable.'%')
+        ->orWhere('description','ILIKE','%'.$variable.'%')
         ->paginate(5);
 
         return view("news",compact("news","variable"));

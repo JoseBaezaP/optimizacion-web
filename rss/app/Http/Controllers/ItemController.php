@@ -38,7 +38,5 @@ class ItemController extends Controller
             return back()->with('failure', 'A ocurrido un error, pruebe con otro URL o intente más tarde.');
         }
 
-    }
-
-    
+    }    
 }

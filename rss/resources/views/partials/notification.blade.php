@@ -1,9 +1,3 @@
-@if(session('success'))
-<div class="alert alert-success" role="alert">
- {{session('success')}}
-</div>
-@elseif(session('failure'))
-<div class="alert alert-danger" role="alert">
- {{session('failure')}}
-</div>
+@if(session('success'))<div class="alert alert-success" role="alert">{{session('success')}}<button type="button" class="btn-close position-absolute rigth-10" data-bs-dismiss="alert" aria-label="Close"></button></div>
+@elseif(session('failure'))<div class="alert alert-danger" role="alert">{{session('failure')}}<button type="button" class="btn-close position-absolute rigth-10" data-bs-dismiss="alert" aria-label="Close"></button></div>
 @endif
